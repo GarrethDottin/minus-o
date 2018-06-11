@@ -1,0 +1,21 @@
+{
+  "name": "minus-o-server",
+  "version": "1.0.0",
+  "description": "Server for minus o mobile app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "http-status": "^1.1.0",
+    "morgan": "^1.9.0",
+    "random-id": "0.0.2",
+    "twilio": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
