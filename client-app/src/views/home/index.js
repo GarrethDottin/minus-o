@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Pulse from '../../components/pulse';
+import { Ionicons } from '@expo/vector-icons';
 import { textColors } from '../../constants';
+import Pulse from '../../components/pulse';
 import GradientView from '../../components/gradient-view';
 
 import logo from '../../../assets/logo.jpg';
@@ -47,6 +48,8 @@ class Home extends React.Component {
         <View style={styles.bottomView}>
           <Text style={styles.slideText}>Slide to get help</Text>
           <View style={styles.slideView} elevation={11}>
+            <Ionicons name="ios-arrow-back" size={70} color={textColors.darkBlue} />
+            <Ionicons name="ios-arrow-back" size={70} color={textColors.darkBlue} />
           </View>
         </View>
       </GradientView>
@@ -74,6 +77,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     width: 70,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: textColors.white,
   },
   flex: {
