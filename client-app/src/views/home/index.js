@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Pulse from '../../components/pulse';
+import { textColors } from '../../constants';
 import GradientView from '../../components/gradient-view';
 
 import logo from '../../../assets/logo.jpg';
@@ -28,7 +30,17 @@ class Home extends React.Component {
           </View>
           <View style={styles.flex}>
             <TouchableOpacity onPress={this.handleNextScreen}>
-              <Image source={SOSImage} style={styles.SOSImage} />
+              <Pulse
+                color={textColors.lightBlue}
+                style={{ position: 'relative', alignItems: 'center', justifyContent: 'center' }}
+                containerStyle={{ alignItems: 'center', justifyContent: 'center' }}
+                image={{ source: SOSImage, style: styles.SOSImage }}
+                numPulses={4}
+                initialDiameter={100}
+                diameter={250}
+                speed={8}
+                duration={1000}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -50,10 +62,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#119B8B',
+    backgroundColor: textColors.lightBlue,
   },
   slideText: {
-    color: '#fff',
+    color: textColors.white,
     fontSize: 25,
   },
   slideView: {
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     width: 70,
-    backgroundColor: '#fff',
+    backgroundColor: textColors.white,
   },
   flex: {
     flex: 1,
@@ -71,7 +83,13 @@ const styles = StyleSheet.create({
   },
   logoImage: { height: 100, width: 200, resizeMode: 'contain' },
   handWithHeartImage: { height: 100, width: 200, resizeMode: 'contain' },
-  SOSImage: { height: 100, width: 200, resizeMode: 'contain' },
+  SOSImage: {
+    height: 80,
+    width: 80,
+    resizeMode: 'contain',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default Home;
