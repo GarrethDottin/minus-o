@@ -14,17 +14,17 @@ if (process.env.NODE_ENV === 'development') {
   const devToolsExtension = global.devToolsExtension;
 
   if (typeof devToolsExtension === 'function') {
-    enhancers.push(devToolsExtension())
+    enhancers.push(devToolsExtension());
   }
 }
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
-  ...enhancers
+  ...enhancers,
 );
 
 export default createStore(
   rootReducer,
   initialState,
-  composedEnhancers
+  composedEnhancers,
 );

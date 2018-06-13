@@ -10,12 +10,13 @@ export default {
   },
   get: async (key) => {
     let item = await AsyncStorage.getItem(key);
+    let data = '';
     try {
-      item = JSON.parse(item);
+      data = JSON.parse(item);
     } catch (e) {
-      return item;
+      data = item;
     }
-    return item;
+    return data;
   },
   removeAll: async () => {
     const keys = await AsyncStorage.getAllKeys();
